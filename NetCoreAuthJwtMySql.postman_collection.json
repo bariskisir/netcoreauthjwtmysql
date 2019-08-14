@@ -1,0 +1,113 @@
+{
+	"variables": [],
+	"info": {
+		"name": "NetCoreAuthJwtMySql",
+		"_postman_id": "37e542f3-c744-9792-b5d6-06d1c50dd1a8",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"url": "{{HTTP}}://{{URL}}:{{PORT}}/api/auth/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Email\":\"test@hotmail.com\",\n\t\"Password\":\"test1234\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"url": "{{HTTP}}://{{URL}}:{{PORT}}/api/auth/register",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Email\":\"test@hotmail.com\",\n\t\"Password\":\"test1234\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "authorize",
+			"request": {
+				"url": "{{HTTP}}://{{URL}}:{{PORT}}/api/custom/authorize",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer {{TOKEN}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "authorizeadmin",
+			"request": {
+				"url": "{{HTTP}}://{{URL}}:{{PORT}}/api/custom/authorizeadmin",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer {{TOKEN}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "authorizeuser",
+			"request": {
+				"url": "{{HTTP}}://{{URL}}:{{PORT}}/api/custom/authorizeuser",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer {{TOKEN}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "allowanonymous",
+			"request": {
+				"url": "{{HTTP}}://{{URL}}:{{PORT}}/api/custom/allowanonymous",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
