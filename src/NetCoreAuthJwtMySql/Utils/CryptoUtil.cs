@@ -22,9 +22,9 @@ namespace NetCoreAuthJwtMySql.Utils
             }
             return result;
         }
-        public static string HashMultiple(string text)
+        public static string HashMultiple(string password, string salt)
         {
-            var hashedString = text;
+            var hashedString = password + salt;
             for (int i = 0; i < 7; i++)
             {
                 hashedString = Hash(hashedString);
@@ -43,8 +43,7 @@ namespace NetCoreAuthJwtMySql.Utils
         public static bool VerifyPassword(string password, string salt, string hashedPassword)
         {
             var result = false;
-            var salted = password + salt;
-            var hashed = HashMultiple(salted);
+            var hashed = HashMultiple(password, salt);
             if (hashedPassword == hashed)
             {
                 result = true;

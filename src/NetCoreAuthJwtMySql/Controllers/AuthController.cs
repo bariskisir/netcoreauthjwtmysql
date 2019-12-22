@@ -78,8 +78,7 @@ namespace NetCoreAuthJwtMySql.Controllers
                     var email = requestRegister.Email;
                     var salt = CryptoUtil.GenerateSalt();
                     var password = requestRegister.Password;
-                    var saltedPassword = password + salt;
-                    var hashedPassword = CryptoUtil.HashMultiple(saltedPassword);
+                    var hashedPassword = CryptoUtil.HashMultiple(password, salt);
                     var user = new User();
                     user.Email = email;
                     user.Salt = salt;
